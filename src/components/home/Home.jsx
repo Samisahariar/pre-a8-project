@@ -1,8 +1,13 @@
+import CategoryLIst from "../categorylist/CategoryLIst";
+import FeaturedJobs from "../featuresjobs/FeaturedJobs";
+import Herosection from "../herosection/Hero-section";
 
 const Home = () => {
     return (
         <div>
-            <h3>This is home</h3>
+            <Herosection></Herosection>
+            <CategoryLIst></CategoryLIst>
+            <FeaturedJobs></FeaturedJobs>
         </div>
     );
 };
