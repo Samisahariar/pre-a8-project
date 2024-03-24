@@ -1,18 +1,24 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { FeaturedContext } from "../root/Root";
+import SingleJob from "../singlejob/SingleJob";
+
+
 
 const FeaturedJobs = () => {
-
-    const [featuredJobs, setFeatured] = useState([])
-    useEffect(() => {
-        fetch('/jobs.json')
-        .then(res => res.json())
-        .then(data => setFeatured(data))
-    }, [])
+    const gift = useContext(FeaturedContext)
 
     return (
-        <div className="text-center mt-20">
-            <h3>Featured Jobs available is : {featuredJobs.length}</h3>
+
+        <div className="text-center mt-20 w-[90vw] mx-auto">
+            <h3 className="text-4xl font-semibold">Featured Jobs available : {gift.length}</h3>
+            <div className="grid-cols-2 grid">
+                {
+                    gift.map(single => <SingleJob single={single}></SingleJob>)
+                }
+            </div>
         </div>
+
+
     );
 };
 

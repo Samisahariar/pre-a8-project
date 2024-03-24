@@ -9,6 +9,7 @@ import {
 import Root from './components/root/Root.jsx';
 import AppliedJobs from './components/appliedjobs/AppliedJobs.jsx';
 import ErrorPage from './components/errorpage/ErrorPage.jsx';
+import SingleFeaturedRoute from './components/singleFeaturdRoute/SingleFeaturedRoute.jsx';
 
 const router = createBrowserRouter([{
   path: "/",
@@ -21,7 +22,13 @@ const router = createBrowserRouter([{
   {
     path : '/appliedjobs',
     element : <AppliedJobs></AppliedJobs>
+  },
+  {
+    path: '/featuredJobs/:userID',
+    element : <SingleFeaturedRoute></SingleFeaturedRoute>,
+    loader : ( {params} ) => params
   }
+
 ]
 }])
 
